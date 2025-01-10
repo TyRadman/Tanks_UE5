@@ -9,6 +9,7 @@
 /**
  * 
  */
+
 UCLASS()
 class TOONTANKS_API ATankPawn : public ABasePawn
 {
@@ -28,5 +29,11 @@ private:
 	UPROPERTY(VisibleAnywhere, Category="Tank Components")
 	TObjectPtr<class UCameraComponent> Camera;
 
-	void Move(float Value);
+	UPROPERTY(EditAnywhere, Category="Tank Input")
+	TObjectPtr<class UInputMappingContext> InputMappingContext;
+	
+	UPROPERTY(EditAnywhere, Category="Tank Input")
+	TObjectPtr<class UInputAction> MovementInputAction;
+
+	void Move(const struct FInputActionValue& Value);
 };
