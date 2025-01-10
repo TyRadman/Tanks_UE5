@@ -1,0 +1,12 @@
+# Unreal Engine Ignore
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+*.sln
+*.vcxproj*
+*.xcodeproj*
+*.opensdf
+*.sdf
+*.tmp
+*.log
