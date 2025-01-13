@@ -14,12 +14,8 @@ class TOONTANKS_API ABasePawn : public APawn
 public:
 	ABasePawn();
 
-	UPROPERTY(VisibleDefaultsOnly)
-	int32 valueValue;
-
 protected:
-	// Called when the game starts or when spawned
-	virtual void BeginPlay() override;
+	void RotateTurret(FVector TargetLocation);
 
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Tank Components", meta=(AllowPrivateAccess="true"))
@@ -30,8 +26,4 @@ private:
 	TObjectPtr<UStaticMeshComponent> TurretMesh;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Tank Components", meta=(AllowPrivateAccess="true"))
 	TObjectPtr<USceneComponent> ProjectileSpawnPoint;
-
-public:	
-	// Called every frame
-	virtual void Tick(float DeltaTime) override;
 };

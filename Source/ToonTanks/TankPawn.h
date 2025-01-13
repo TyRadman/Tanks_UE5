@@ -17,9 +17,11 @@ class TOONTANKS_API ATankPawn : public ABasePawn
 
 public:
 	ATankPawn();
+	// Called every frame
+	virtual void Tick(float DeltaTime) override;
 
+protected:
 	virtual void BeginPlay() override;
-
 	virtual void SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) override;
 	
 private:
@@ -34,6 +36,18 @@ private:
 	
 	UPROPERTY(EditAnywhere, Category="Tank Input")
 	TObjectPtr<class UInputAction> MovementInputAction;
+	
+	UPROPERTY(EditAnywhere, Category="Tank Input")
+	TObjectPtr<class UInputAction> TurnInputAction;
+
+	UPROPERTY(EditAnywhere, Category="Tank Stats")
+	float MovementSpeed = 200.f;
+	
+	UPROPERTY(EditAnywhere, Category="Tank Stats")
+	float TurnSpeed = 200.f;
+
+	APlayerController* PlayerControllerRef;
 
 	void Move(const struct FInputActionValue& Value);
+	void Turn(const struct FInputActionValue& Value);
 };
