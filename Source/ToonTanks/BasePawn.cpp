@@ -42,4 +42,10 @@ void ABasePawn::RotateTurret(FVector TargetLocation)
 	TurretMesh->SetWorldRotation(NewRotation);
 }
 
+void ABasePawn::Shoot()
+{
+	FVector ShootingPoint = ProjectileSpawnPoint->GetComponentLocation();
+	DrawDebugSphere(GetWorld(), ShootingPoint, 20, 30, FColor::Red, false, 2.f);
+}
+
 

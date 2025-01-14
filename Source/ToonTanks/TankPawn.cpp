@@ -76,6 +76,9 @@ void ATankPawn::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
 
 		// set up the left and right turn
 		EnhancedInputComponent->BindAction(TurnInputAction, ETriggerEvent::Triggered, this, &ATankPawn::Turn);
+
+		// shooting
+		EnhancedInputComponent->BindAction(ShootInputAction, ETriggerEvent::Triggered, this, &ATankPawn::PerformShooting);
 	}
 	else
 	{
@@ -105,3 +108,7 @@ void ATankPawn::Turn(const FInputActionValue& Value)
 	AddActorLocalRotation(Rotation, true);
 }
 
+void ATankPawn::PerformShooting(const FInputActionValue& Value)
+{
+	Shoot();
+}

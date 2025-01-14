@@ -16,6 +16,7 @@ public:
 
 protected:
 	void RotateTurret(FVector TargetLocation);
+	void Shoot();
 
 private:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category="Tank Components", meta=(AllowPrivateAccess="true"))

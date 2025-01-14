@@ -38,7 +38,10 @@ private:
 	TObjectPtr<class UInputAction> MovementInputAction;
 	
 	UPROPERTY(EditAnywhere, Category="Tank Input")
-	TObjectPtr<class UInputAction> TurnInputAction;
+	TObjectPtr<UInputAction> TurnInputAction;
+	
+	UPROPERTY(EditAnywhere, Category="Tank Input")
+	TObjectPtr<UInputAction> ShootInputAction;
 
 	UPROPERTY(EditAnywhere, Category="Tank Stats")
 	float MovementSpeed = 200.f;
@@ -50,4 +53,5 @@ private:
 
 	void Move(const struct FInputActionValue& Value);
 	void Turn(const struct FInputActionValue& Value);
+	void PerformShooting(const struct FInputActionValue& Value);
 };
