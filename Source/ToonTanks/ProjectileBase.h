@@ -27,4 +27,6 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category="Visuals")
 	TObjectPtr<UStaticMeshComponent> Mesh;
 
+	UPROPERTY(VisibleAnywhere, Category="Movement")
+	TObjectPtr<class UProjectileMovementComponent> ProjectileMovement;
 };
