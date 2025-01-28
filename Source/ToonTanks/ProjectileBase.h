@@ -29,4 +29,10 @@ private:
 
 	UPROPERTY(VisibleAnywhere, Category="Movement")
 	TObjectPtr<class UProjectileMovementComponent> ProjectileMovement;
+
+	UFUNCTION()
+	void OnHit(UPrimitiveComponent* HitComp, AActor* OtherActor, UPrimitiveComponent* otherComp, FVector NormalImpulse, const FHitResult& Hit);
+
+	UPROPERTY(EditAnywhere)
+	float Damage = 10.0f;
 };
